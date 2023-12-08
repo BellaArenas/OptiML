@@ -4,6 +4,18 @@ from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
 from sklearn.svm import SVR
 from sklearn.cross_decomposition import PLSRegression
 
+regression_metrics = [
+    {'label': 'R² Score', 'value': 'r2'},
+    {'label': 'Mean Squared Error (MSE)', 'value': 'neg_mean_squared_error'},
+    {'label': 'Mean Absolute Error (MAE)', 'value': 'neg_mean_absolute_error'}
+]
+
+classification_metrics = [
+    {'label': 'Accuracy', 'value': 'Accuracy'},
+    {'label': 'Precision', 'value': 'Precision'},
+    {'label': 'Recall', 'value': 'Recall'}
+]
+
 regression_algorithms = {
     'linear_regression': {
         'model': LinearRegression(),
@@ -95,7 +107,7 @@ regression_algorithms = {
     'pls': {
         'model': PLSRegression(),
         'params': {
-            'n_components': [2, 3, 4, 5, 6, 7, 8, 9, 10],  
+            'n_components': [2],
             'scale': [True, False],  
             'max_iter': [500, 1000, 1500],  
             'tol': [1e-06, 1e-05, 1e-04]  
