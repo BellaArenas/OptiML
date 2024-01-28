@@ -58,16 +58,7 @@ transformations = [
 ]
 
 app.layout = dbc.Container(fluid=True, style={'font-family': 'Sans-serif'}, children=[
-    dbc.Row([
-        html.Img(src='OptiML/Deployment/assets/OptiML.png', style={
-            'height': '100px',  # Set the height
-            'width': 'auto',  # Set the width to 'auto' to maintain aspect ratio
-            'display': 'block',  # Display block to allow margin auto to work
-            'margin-left': 'auto',  # Automatically adjust left margin
-            'margin-right': 'auto',  # Automatically adjust right margin
-        })
     dcc.Tabs(id="tabs-example", value='tab-1', children=[    
-    ], className="mb-4", justify="center"),
         dcc.Tab(label='Upload & Select Data', value='tab-1', children=[
             dbc.Row([
                 dbc.Col(html.Label("Step 1: Upload  CSV file.", style={'fontWeight': 'bold'}), width=12),
@@ -158,7 +149,7 @@ app.layout = dbc.Container(fluid=True, style={'font-family': 'Sans-serif'}, chil
                     html.Label('Select Metric:', style={'fontWeight': 'bold'}),
                     dcc.Dropdown(id='metric-dropdown', options=[], value=None)
                 ], width=6, className="mb-3"),
-            ], justify='center'), 
+            ]), 
             dbc.Row([
                 dbc.Col([
                     dbc.Button(
@@ -169,7 +160,7 @@ app.layout = dbc.Container(fluid=True, style={'font-family': 'Sans-serif'}, chil
                         className="me-1"
                     ),
                 ], width=12, className="mb-3"),
-            ], justify='center'), 
+            ]), 
             dbc.Row([
                 # Area for displaying best model information
                 dbc.Col(html.Div(id='best-model-info', style={'margin-top': '20px', 'fontWeight': 'bold', 'fontSize': '16px'})),
@@ -247,7 +238,6 @@ app.layout = dbc.Container(fluid=True, style={'font-family': 'Sans-serif'}, chil
             ])
         ]),
     ]),
-
     dbc.Alert(id="alert-auto", is_open=False, duration=4000),
     html.Div(id='tab-content'),
     html.Div(id='placeholder-output', style={'display': 'none'}),
