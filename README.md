@@ -1,7 +1,7 @@
 # OptiML
 
 ## Description
-OptiML is a comprehensive machine learning tool designed to streamline the process of data analysis, model training, and result visualization. It offers a user-friendly interface for handling various machine learning tasks, primarily focused on drug development and bioinformatics.
+OptiML is a comprehensive machine learning tool designed to streamline the process of data analysis, model training, and result visualization. It offers a user-friendly interface for handling various machine learning tasks, with a future goal of focusing on drug development and bioinformatics.
 
 ## Key Features
 - **Data Preprocessing:** Functions for classifying column types and preprocessing data.
